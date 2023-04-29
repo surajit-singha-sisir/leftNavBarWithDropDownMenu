@@ -13,7 +13,7 @@ bestAnimatedNavbarMobileResponsive.html<br>
 **Output**
  _Desktop View_
 ![2023-04-29_14h57_16](https://user-images.githubusercontent.com/48810102/235294349-fbee957f-4752-46b9-bca8-ec76c9ce7d2c.png)
-
+<br>
 **Output**
- _Mobile View_
+ _Mobile View_<br>
  ![2023-04-29_14h57_30](https://user-images.githubusercontent.com/48810102/235294373-1e6fc513-f0dd-464a-b1cc-f9532016de09.png)
