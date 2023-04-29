@@ -1,0 +1,168 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+</head>
+
+<header>
+  <nav>
+    <div class="logo">BPYTUTOR.COM</div>
+    <ul class="nav-links">
+      <li><i class="fas fa-home"></i> <a href="#">Home</a></li>
+      <li><i class="fas fa-info-circle"></i> <a href="#">About</a></li>
+      <li><i class="fas fa-folder-open"></i> <a href="#">Portfolio</a></li>
+      <li><i class="fas fa-envelope"></i> <a href="#">Contact</a></li>
+    </ul>
+    <div class="burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 999;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    padding: 0 50px;
+  }
+
+  .logo {
+    font-weight: bolder;
+    color: #5febf0;
+  }
+
+  .fas {
+    color: white;
+    margin-right: 5px;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+  }
+
+  .nav-links li {
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .nav-links a:hover {
+    color: #ff81e8;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .nav-links {
+      width: 40%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    body {
+      overflow-x: hidden;
+    }
+    .nav-links {
+      width: 30%;
+      position: fixed;
+      right: 0;
+      top: 65px;
+      display: block;
+      block-size: 100%;
+      background-color: #333;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      justify-content: flex-start;
+      padding-top: 30px;
+      gap: 30px;
+      transform: translateX(100%);
+      transition: all 0.5s ease;
+    }
+
+    .fas {
+      color: white;
+      margin-right: 5px;
+    }
+    .nav-links li {
+      opacity: 0;
+    }
+    .burger {
+      display: block;
+    }
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0px);
+    }
+  }
+</style>
+
+<script>
+  const navSlide = () => {
+    const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav-links");
+    const navLinks = document.querySelectorAll(".nav-links li");
+
+    burger.addEventListener("click", () => {
+      nav.classList.toggle("nav-active");
+      navLinks.forEach((link, index) => {
+        if (link.style.animation) {
+          link.style.animation = "";
+        } else {
+          link.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 7 + 0.3
+          }s`;
+        }
+      });
+      burger.classList.toggle("toggle");
+    });
+  };
+
+  navSlide();
+</script>
