@@ -1,0 +1,75 @@
+#Left Column NavBar using HTML,CSS and JS.
+<div class="sidebar">
+    <button class="btn">Menu 1</button>
+    <div class="dropdown">
+      <a href="#">Submenu 1</a>
+      <a href="#">Submenu 2</a>
+      <a href="#">Submenu 3</a>
+    </div>
+    
+    <button class="btn">Menu 2</button>
+    <div class="dropdown">
+      <a href="#">Submenu 1</a>
+      <a href="#">Submenu 2</a>
+      <a href="#">Submenu 3</a>
+    </div>
+    
+    <button class="btn">Menu 3</button>
+    <div class="dropdown">
+      <a href="#">Submenu 1</a>
+      <a href="#">Submenu 2</a>
+      <a href="#">Submenu 3</a>
+    </div>
+  </div>
+  
+  
+<style>
+    .sidebar {
+  width: 30%;
+  background-color: #333;
+  color: #fff;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.btn {
+  background-color: #444;
+  color: #fff;
+  border: none;
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  background-color: #444;
+  padding: 10px 0;
+}
+
+.dropdown a {
+  color: #fff;
+  padding: 10px;
+  display: block;
+}
+
+.active {
+  display: block;
+}
+</style>
+
+<script>
+const buttons = document.querySelectorAll(".btn");
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const dropdown = button.nextElementSibling;
+    dropdown.classList.toggle("active");
+  });
+});
+</script>
